@@ -5,6 +5,9 @@ use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdminController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
+use App\Http\Controllers\MenucorrienteController;
+use App\Http\Controllers\MenuejecutivoController;
+use App\Http\Controllers\MenuespecialController;
 use App\Http\Controllers\PlatosController;
 use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\TablauserController;
@@ -36,10 +39,15 @@ Route::post('/login',[LoginController::class, 'store']);
 
 // Cerrar sesión
 Route::post('/logout',[LogoutController::class, 'store'])->name('logout');
-// Mostrar el menú
-Route::get('/menu',[MenuController::class, 'index'])->name('menu');
 
-//Ruta panel admin
+// Mostrar el menú y categorias
+Route::get('/menu',[MenuController::class, 'index'])->name('menu');
+Route::get('/menu-corriente', [MenucorrienteController::class, 'index'])->name('menu-corriente');
+Route::get('/menu-especial', [MenuespecialController::class, 'index'])->name('menu-especial');
+Route::get('/menu-ejecutivo', [MenuejecutivoController::class, 'index'])->name('menu-ejecutivo');
+
+
+// autenticación ruta panel admin
 Route::middleware(['auth', 'admin'])->group(function () {
     Route::get('/admin', [AdminController::class, 'index'])->name('admin.index');
 });

@@ -6,13 +6,13 @@
 
 @section('contenido')
     <p class="text-3xl font-bold text-amber-500 flex justify-center">Categorías</p>
-    <div class="flex justify-center w-full">
-        <div class="flex flex-col gap-12 md:flex-row justify-center w-full pb-20 pt-4">
+    <div class="flex justify-center w-full md:m-4">
+        <div class="flex flex-col gap-12 md:flex-row justify-center w-full pb-20 pt-4 md:w-10/12">
             <!-- Primer elemento -->
-            <div class="bg-white flex flex-col justify-center w-full md:w-1/3 gap-4 rounded-lg p-4 m-4">
-                <img class="w-full h-auto object-contain" src="{{ asset('img/Pollo.png') }}" alt="Alternativa img">
+            <div class="bg-white flex flex-col justify-center w-full md:w-1/3 gap-4 rounded-lg p-4">
+                <img class="w-full h-auto object-contain" src="{{ asset('img/1J.jpg') }}" alt="Alternativa img">
                 <div class="flex flex-col justify-center text-center">
-                    <a href="">
+                    <a href="{{ route('menu-corriente') }}">
                         <input type="submit" value="Corriente"
                             class="text-amber-600 font-bold text-xl hover:bg-amber-400 p-2 rounded-lg hover:text-black cursor-pointer"></input>
                     </a>
@@ -22,10 +22,10 @@
             </div>
 
             <!-- Segundo elemento -->
-            <div class="bg-white flex flex-col justify-center w-full md:w-1/3 gap-4 rounded-lg p-4 m-4">
-                <img class="w-full h-auto object-contain" src="{{ asset('img/polloB.png') }}" alt="Alternativa img">
+            <div class="bg-white flex flex-col justify-center w-full md:w-1/3 gap-4 rounded-lg p-4">
+                <img class="w-full h-auto object-contain" src="{{ asset('img/1D.jpg') }}" alt="Alternativa img">
                 <div class="flex flex-col justify-center text-center">
-                    <a href="">
+                    <a href="{{ route('menu-ejecutivo') }}">
                         <input type="submit" value="Ejecutivo"
                             class="text-amber-600 font-bold text-xl hover:bg-amber-400 p-2 rounded-lg hover:text-black cursor-pointer"></input>
                     </a>
@@ -35,10 +35,10 @@
             </div>
 
             <!-- Tercer elemento -->
-            <div class="bg-white flex flex-col justify-center w-full md:w-1/3 gap-4 rounded-lg p-4 m-4">
+            <div class="bg-white flex flex-col justify-center w-full md:w-1/3 gap-4 rounded-lg p-4">
                 <img class="w-full h-auto object-contain" src="{{ asset('img/lomo.png') }}" alt="Alternativa img">
                 <div class="flex flex-col justify-center text-center">
-                    <a href="">
+                    <a href="{{ route('menu-especial') }}">
                         <input type="submit" value="Especial"
                             class="text-amber-600 font-bold text-xl hover:bg-amber-400 p-2 rounded-lg hover:text-black cursor-pointer"></input>
                     </a>

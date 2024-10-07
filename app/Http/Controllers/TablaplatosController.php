@@ -25,9 +25,9 @@ class TablaplatosController extends Controller
     public function update(Request $request, $id)
     {
         // Validar los datos del formulario
-        $request->validate([
+        $this->validate($request,[
             'categoria' => 'required|string|max:255',
-            'nombre' => 'required|string|max:255',
+            'nombre_plato' => 'required|string|max:255',
             'descripcion' => 'required|string',
             'precio' => 'required|numeric|min:0',
             'cantidad' => 'required|integer|min:1',
@@ -49,7 +49,7 @@ class TablaplatosController extends Controller
         }
         // Actualizar los datos del plato
         $plato->categoria = $request->categoria;
-        $plato->nombre = $request->nombre;
+        $plato->nombre_plato = $request->nombre_plato;
         $plato->descripcion = $request->descripcion;
         $plato->precio = $request->precio;
         $plato->cantidad = $request->cantidad;
@@ -58,7 +58,7 @@ class TablaplatosController extends Controller
         $plato->save();
 
         // Redirigir a una página o mostrar un mensaje de éxito
-        return redirect()->route('editar-platos', $plato->id)->with('success', 'Plato actualizado con éxito');
+        return redirect()->route('tabla-platos', $plato->id)->with('success', 'Plato actualizado con éxito');
     }
 
     public function destroy($id)

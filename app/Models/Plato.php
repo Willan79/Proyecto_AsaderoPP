@@ -8,9 +8,10 @@ use Illuminate\Database\Eloquent\Model;
 class Plato extends Model
 {
     use HasFactory;
+
     protected $fillable = [
         'categoria',
-        'nombre',
+        'nombre_plato',
         'descripcion',
         'imagen',
         'precio',
