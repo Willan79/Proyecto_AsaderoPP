@@ -38,6 +38,10 @@ Inicia sesión
                     <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
                 @enderror
             </div>
+            <div class="flex flex-col">
+                <span class="text-gray-500 text-sm">No estas registrado</span>
+                <a class="text-blue-700 hover:font-bold" href="{{ route('register') }}">Registrarte Aquí</a>
+            </div>
 
             <div class="mb-5">
                 <input type="checkbox" name="remember">
@@ -47,7 +51,7 @@ Inicia sesión
             <input
             type="submit"
             value="Iniciar sesión"
-            class="bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer font-bold w-full p-2 rounded-lg"
+            class="w-4/12 bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer font-bold p-2 rounded-lg"
             ></input>
         </form>
     </div>

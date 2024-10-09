@@ -8,7 +8,7 @@
     <title>Asaderopp @yield('titulo')</title>
     <style>
         .imagen {
-            background-image: url("{{ asset('img/food-3676796_1280.jpg') }}");
+            background-image: url("{{ asset('img/fondo-2.jpg') }}");
         }
     </style>
 
@@ -16,8 +16,8 @@
 
 </head>
 
-<body class="bg-amber-100">
-    <div class="imagen bg-cover bg-center bg-opacity-50 relative">
+<body class="bg-slate-800 overflow-x-auto w-full">
+    <div class="imagen bg-cover bg-center bg-opacity-50 relative min-w-screen">
         <div class="absolute inset-0 bg-black bg-opacity-60"></div>
         <header class="p-5 boerder-b bg-amber-500 fixed top-0 left-0 w-full z-50">
             <div class="container mx-auto flex justify-between">
@@ -32,20 +32,23 @@
                         <a>
                             <span class="text-sky-800"> Hola: {{ auth()->user()->name }}</span>
                         </a>
-
-                        <a href="" class="text-black">
-
-                            <div class="cart-icon">
-                                <svg class="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
-                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
-                                    <circle cx="9" cy="21" r="1" />
-                                    <circle cx="20" cy="21" r="1" />
-                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                                </svg>
-                                <span class="badge">3</span>
-                            </div>
-
-                        </a>
+                        <!-- Carrito de compras-->
+                        <!-- Sí existen elementos se muestra el carrito -->
+                        @if (Cart::content()->count())
+                            <a href="" class="text-black">
+                                <div class="cart-icon">
+                                    <svg class="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="none"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round">
+                                        <circle cx="9" cy="21" r="1" />
+                                        <circle cx="20" cy="21" r="1" />
+                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                                    </svg>
+                                    <!-- Sí existen elementos se muestra el numeo -->
+                                    <span class="badge">{{ Cart::content()->count() }}</span>
+                                </div>
+                            </a>
+                        @endif
 
                         <a href="/">Inicio</a>
                         <a href="{{ route('menu') }}">Menú</a>
@@ -65,7 +68,7 @@
                         <a href="/">Inicio</a>
                         <a href="{{ route('menu') }}">Menú</a>
                         <a href="{{ route('login') }}">Login</a>
-                        <a href="{{ route('register') }}">Crear Cuenta</a>
+                        <a href="{{ route('register') }}">Registrarte</a>
                     </nav>
                 @endguest
 

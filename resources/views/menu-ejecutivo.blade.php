@@ -5,13 +5,13 @@
 @endsection
 
 @section('contenido')
-    <div class="flex justify-center w-full mt-20">
-        <div class="flex flex-col gap-12 md:flex-row justify-center w-full pb-20 pt-4">
+    <div class="flex justify-center w-auto mt-20">
+        <div class="flex flex-col gap-12 md:flex-row justify-center w-auto  pb-20 pt-4">
             @foreach ($platos as $plato)
                 <!-- Cada Plato -->
-                <div class="bg-white flex flex-col items-center justify-center w-full md:w-1/3 gap-4 rounded-lg p-4">
+                <div class="bg-white flex flex-col items-center justify-center w-auto md:w-1/3 gap-4 rounded-lg p-4 m-4">
                     <!-- Imagen del Plato -->
-                    <img class="w-full h-auto object-contain" src="{{ asset('storage/' . $plato->imagen) }}"
+                    <img class="w-auto h-auto object-contain" src="{{ asset('storage/' . $plato->imagen) }}"
                         alt="{{ $plato->nombre_plato }}">
 
                     <!-- Información del Plato -->

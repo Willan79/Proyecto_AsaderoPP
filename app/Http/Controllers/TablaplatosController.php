@@ -18,7 +18,7 @@ class TablaplatosController extends Controller
     public function edit($id)
     {
         $plato = Plato::findOrFail($id); // Buscar el plato por ID
-        return view('admin.editar-platos', compact('plato')); // Mostrar el formulario de edición
+        return view('admin.editar-platos', compact('plato')); // Mostrar el formulario de editar plato
     }
 
     // Actualizar los datos de un plato existente

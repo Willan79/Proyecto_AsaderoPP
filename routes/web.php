@@ -3,6 +3,7 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\MenuController;
 use App\Http\Controllers\AdminController;
+use App\Http\Controllers\CarritoController;
 use App\Http\Controllers\LoginController;
 use App\Http\Controllers\LogoutController;
 use App\Http\Controllers\MenucorrienteController;
@@ -71,4 +72,7 @@ Route::get('/tabla-pedidos',[TablapedidosController::class, 'index'])->name('tab
 Route::get('/tabla-user',[TablauserController::class, 'index'])->name('tabla-user');
 Route::delete('/admin/usuarios/{id}', [TablauserController::class, 'destroy'])->name('usuarios.destroy');
 
+
+//! Rutas para carrito de compras
+Route::get('/agregarplato',[CarritoController::class, 'index'])->name('agregarplato');
 

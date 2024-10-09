@@ -7,10 +7,6 @@ use Illuminate\Http\Request;
 
 class TablauserController extends Controller
 {
-   // public function index()
-    //{
-      //  return view('admin.tabla-user');
-   // }
 
     public function index()
     {
