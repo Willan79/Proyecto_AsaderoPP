@@ -6,7 +6,7 @@
 
 @section('contenido')
     <p class="text-3xl font-bold text-amber-500 flex justify-center">Categorías</p>
-    <div class="flex justify-center w-full md:m-4">
+    <div class="flex justify-center m-4">
         <div class="flex flex-col gap-2 md:flex-row justify-center w-auto pb-20 pt-4 md:w-10/12">
             <!-- Primer elemento -->
             <div class="bg-white flex flex-col justify-center w-auto md:w-1/3 gap-4 rounded-lg p-4 m-4">

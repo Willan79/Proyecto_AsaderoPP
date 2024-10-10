@@ -47,17 +47,17 @@
                     <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Dirección</span>
                     <input type="text"
                         class="p-2 rounded-md border-2 border-gray-300 focus:border-blue-500 focus:outline-none w-full"
-                        id="direccion" name="direccion" placeholder="Direccion" value="{{ old('direccion') }}" />
+                        id="direccion" name="direccion" placeholder="Dirección" value="{{ old('direccion') }}" />
                     @error('direccion')
                         <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
                     @enderror
                 </div>
 
                 <div class="flex items-center mb-2" id="telefono">
-                    <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Telefono</span>
+                    <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Teléfono</span>
                     <input type="text"
                         class="p-2 rounded-md border-2 border-gray-300 focus:border-blue-500 focus:outline-none w-full"
-                        id="telefono" name="telefono" placeholder="telefono" value="{{ old('telefono') }}" />
+                        id="telefono" name="telefono" placeholder="Teléfono" value="{{ old('telefono') }}" />
                     @error('telefono')
                         <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
                     @enderror

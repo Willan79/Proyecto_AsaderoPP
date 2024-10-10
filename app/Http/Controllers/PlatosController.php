@@ -16,6 +16,9 @@ class PlatosController extends Controller
         return view('admin.nuevoplato');
     }
 
+
+
+
     public function store(Request $request)
     {
         // Validar los datos del formulario
@@ -49,8 +52,19 @@ class PlatosController extends Controller
         //return redirect()->back()->with('success', 'El plato ha sido creado con éxito');
         return redirect()->route('tabla-platos')->with('success', 'El plato ha sido creado con éxito');
     }
+    /*
+    public function show($id)
+    {
+        // Encontrar el plato por ID
+        $plato = Plato::findOrFail($id);
 
-
+        // Retornar la vista de detalles con el plato
+        return view('detalles_plato', compact('plato'));
+    }
+    */
+    public function show($id)
+    {
+        $plato = Plato::findOrFail($id);
+        return response()->json($plato);
+    }
 }
-
-

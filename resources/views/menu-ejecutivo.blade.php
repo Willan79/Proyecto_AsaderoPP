@@ -5,11 +5,11 @@
 @endsection
 
 @section('contenido')
-    <div class="flex justify-center w-auto mt-20">
-        <div class="flex flex-col gap-12 md:flex-row justify-center w-auto  pb-20 pt-4">
+    <div class="flex justify-center mt-10">
+        <div class="flex flex-col gap-4 md:flex-row justify-center w-auto pt-4">
             @foreach ($platos as $plato)
                 <!-- Cada Plato -->
-                <div class="bg-white flex flex-col items-center justify-center w-auto md:w-1/3 gap-4 rounded-lg p-4 m-4">
+                <div class="bg-white flex flex-col items-center justify-center w-auto md:w-3/12 gap-4 rounded-lg p-4 m-4">
                     <!-- Imagen del Plato -->
                     <img class="w-auto h-auto object-contain" src="{{ asset('storage/' . $plato->imagen) }}"
                         alt="{{ $plato->nombre_plato }}">
@@ -27,14 +27,16 @@
                                 Agregar
                             </a>
 
-                            <!-- Botón Detalles -->
-                            <a href="{ route('detalles-plato', $plato->id) }"
+                            <button onclick="openModal({{ $plato->id }})"
                                 class="bg-blue-500 text-white py-2 px-4 rounded-lg hover:bg-blue-700 ml-4">
-                                Detalles
-                            </a>
+                                Ver detalles
+                            </button>
+                            
                         </div>
                     </div>
                 </div>
+                <!-- Modal oculto -->
+                @include('layouts.modal_detalles')
             @endforeach
         </div>
     </div>

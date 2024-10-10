@@ -11,9 +11,9 @@
             background-image: url("{{ asset('img/fondo-2.jpg') }}");
         }
     </style>
-
+    <script src="{{ asset('js/platos.js') }}"></script>
     <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
-
+    <script src="{{ asset('js/modales.js') }}"></script>
 </head>
 
 <body class="bg-slate-800 overflow-x-auto w-full">
@@ -28,7 +28,6 @@
                 <!--Autenticado-->
                 @auth
                     <nav class="flex gap-4 items-center font-bold">
-
                         <a>
                             <span class="text-sky-800"> Hola: {{ auth()->user()->name }}</span>
                         </a>
@@ -49,7 +48,9 @@
                                 </div>
                             </a>
                         @endif
-
+                        @if (auth()->user()->role === 'admin')
+                            <a href="{{ route('admin.index') }}">Admin</a>
+                        @endif
                         <a href="/">Inicio</a>
                         <a href="{{ route('menu') }}">Menú</a>
                         <form action="{{ route('logout') }}" method="POST">
@@ -58,8 +59,8 @@
                                 Cerrar sesión
                             </button>
                         </form>
-
                     </nav>
+
                 @endauth
 
                 <!--No autenticado-->

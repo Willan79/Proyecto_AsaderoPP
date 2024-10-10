@@ -25,7 +25,7 @@ class TablaplatosController extends Controller
     public function update(Request $request, $id)
     {
         // Validar los datos del formulario
-        $this->validate($request,[
+        $this->validate($request, [
             'categoria' => 'required|string|max:255',
             'nombre_plato' => 'required|string|max:255',
             'descripcion' => 'required|string',
@@ -75,4 +75,6 @@ class TablaplatosController extends Controller
 
         return redirect()->back()->with('success', 'El plato ha sido eliminado con éxito');
     }
+
+    
 }

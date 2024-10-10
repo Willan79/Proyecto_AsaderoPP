@@ -61,15 +61,22 @@ Route::put('editar-platos/{id}', [TablaplatosController::class, 'update'])->name
 // Eliminar plato
 Route::delete('editar-platos/{id}', [TablaplatosController::class, 'destroy'])->name('platos.destroy');
 
+
 //Crear nuevo plato
 Route::get('/nuevoplato',[PlatosController::class, 'index'])->name('nuevoplato');
 Route::post('/nuevoplato',[PlatosController::class, 'store']);
+//Route::get('/detalles_plato',[PlatosController::class, 'detalles'])->name('detalles_plato');
+
+//! detalles o Modal
+//Route::get('/platos/{id}', [PlatosController::class, 'show'])->name('detalles_plato');
+Route::get('/platos/{id}', [PlatosController::class, 'show'])->name('platos.show');
 
 
 // Mostrar tabla de pedidos
 Route::get('/tabla-pedidos',[TablapedidosController::class, 'index'])->name('tabla-pedidos');
 // Mostrar tabla de usuario
 Route::get('/tabla-user',[TablauserController::class, 'index'])->name('tabla-user');
+
 Route::delete('/admin/usuarios/{id}', [TablauserController::class, 'destroy'])->name('usuarios.destroy');
 
 

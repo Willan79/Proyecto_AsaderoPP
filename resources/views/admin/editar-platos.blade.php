@@ -21,9 +21,9 @@
             <div class="mb-4">
                 <label for="categoria" class="block text-gray-700 font-semibold mb-2">Categoría</label>
                 <select id="categoria" name="categoria" class="w-full p-2 border border-gray-300 rounded">
-                    <option value="corrente" {{ $plato->categoria == 'corriente' ? 'selected' : '' }}>Corriente</option>
-                    <option value="ejecutivo" {{ $plato->categoria == 'ejecutivo' ? 'selected' : '' }}>Ejecutivo</option>
-                    <option value="especial" {{ $plato->categoria == 'especial' ? 'selected' : '' }}>Especial</option>
+                    <option value="Corriente" {{ $plato->categoria == 'Corriente' ? 'selected' : '' }}>Corriente</option>
+                    <option value="Ejecutivo" {{ $plato->categoria == 'Ejecutivo' ? 'selected' : '' }}>Ejecutivo</option>
+                    <option value="Especial" {{ $plato->categoria == 'Especial' ? 'selected' : '' }}>Especial</option>
                 </select>
             </div>
 

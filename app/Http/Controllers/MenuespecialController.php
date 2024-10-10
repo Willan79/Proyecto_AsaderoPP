@@ -10,7 +10,7 @@ class MenuespecialController extends Controller
     public function index()
     {
         // Obtener solo los platos de la categoría 'Corriente'
-        $platos = Plato::where('categoria', 'especial')->get();
+        $platos = Plato::where('categoria', 'Especial')->get();
 
         // Pasar los datos a la vista
         return view('menu-especial', compact('platos'));

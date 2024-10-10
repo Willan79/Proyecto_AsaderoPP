@@ -23,6 +23,7 @@
             <!-- Barra lateral -->
             <nav class="w-2/12 bg-gray-800 text-white p-1 ms:w-3/12">
                 <ul class="mt-20">
+                    <li class="mb-2"><a href="/" class="hover:text-gray-400">Inicio</a></li>
                     <li class="mb-2"><a href="{{ route('admin.index') }}" class="hover:text-gray-400">Panel</a></li>
                     <li class="mb-2"><a href="{{ route('tabla-platos') }}" class="hover:text-gray-400">Platos</a></li>
                     <li class="mb-2"><a href="{{ route('tabla-pedidos') }}" class="hover:text-gray-400">Pedidos</a></li>
@@ -34,7 +35,6 @@
                                 Cerrar sesión
                             </button>
                         </form>
-
                     </li>
                 </ul>
             </nav>

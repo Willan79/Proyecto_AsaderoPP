@@ -21,8 +21,8 @@
                 <label for="categoria" class="block text-gray-700 font-semibold mb-2">Categoría</label>
                 <select id="categoria" name="categoria" class="w-full p-2 border border-gray-300 rounded">
                     <option value=""></option>
-                    <option value="corriente">Corriente</option>
-                    <option value="especial">Especial</option>
+                    <option value="Corriente">Corriente</option>
+                    <option value="Especial">Especial</option>
                     <option value="Ejecutivo">Ejecutivo</option>
                 </select>
                 @error('categoria')
