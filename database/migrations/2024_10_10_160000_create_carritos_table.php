@@ -13,14 +13,9 @@ return new class extends Migration
      */
     public function up()
     {
-        Schema::create('platos', function (Blueprint $table) {
+        Schema::create('carritos', function (Blueprint $table) {
             $table->id();
-            $table->string('categoria');
-            $table->string('nombre_plato');
-            $table->text('descripcion');
-            $table->decimal('precio', 8, 2);
-            $table->string('imagen')->nullable(); // Ruta de la imagen
-            $table->integer('cantidadDisponible');
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -32,6 +27,6 @@ return new class extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('platos');
+        Schema::dropIfExists('carritos');
     }
 };

@@ -10,4 +10,6 @@ class TablapedidosController extends Controller
     {
         return view('admin.tabla-pedidos');
     }
+
+    
 }

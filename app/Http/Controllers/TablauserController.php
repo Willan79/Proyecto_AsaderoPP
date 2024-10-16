@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Storage;
 
 class TablauserController extends Controller
 {
@@ -15,5 +16,20 @@ class TablauserController extends Controller
 
         // Pasar los datos de los usuarios a la vista
         return view('admin.tabla-user', compact('usuarios'));
+    }
+
+    public function destroy($id)
+    {
+        $user = User::findOrFail($id);
+
+        // Eliminar la imagen si existe
+        if ($user->imagen) {
+            Storage::delete('public/' . $user->imagen);
+        }
+
+        // Eliminar el plato
+        $user->delete();
+
+        return redirect()->back()->with('success', 'El usuario ha sido eliminado con éxito');
     }
 }

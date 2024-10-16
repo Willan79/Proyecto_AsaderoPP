@@ -72,10 +72,10 @@
 
             <!-- Cantidad Disponible -->
             <div class="mb-4">
-                <label for="cantidad" class="block text-gray-700 font-semibold mb-2">Cantidad Disponible</label>
-                <input type="number" id="cantidad" name="cantidad" class="w-full p-2 border border-gray-300 rounded"
-                    placeholder="Ingresa la cantidad disponible" min="1" value="{{ old('cantidad') }}">
-                @error('cantidad')
+                <label for="cantidadDisponible" class="block text-gray-700 font-semibold mb-2">Cantidad Disponible</label>
+                <input type="number" id="cantidadDisponible" name="cantidadDisponible" class="w-full p-2 border border-gray-300 rounded"
+                    placeholder="Ingresa la cantidad disponible" min="1" value="{{ old('cantidadDisponible') }}">
+                @error('cantidadDisponible')
                     <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
                 @enderror
             </div>

@@ -5,16 +5,15 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Plato extends Model
+class DetallePedido extends Model
 {
     use HasFactory;
 
+    use HasFactory;
     protected $fillable = [
-        'categoria',
-        'nombre_plato',
-        'descripcion',
-        'imagen',
+        'pedido_id',
+        'plato_id',
+        'cantidad',
         'precio',
-        'cantidadDisponible',
     ];
 }

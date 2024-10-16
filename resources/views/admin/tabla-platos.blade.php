@@ -40,7 +40,7 @@
                                 alt="Imagen plato" class="w-12 h-12">
                         </td>
                         <td class="py-2 px-4 border-b">${{ $plato->precio }}</td>
-                        <td class="py-2 px-4 border-b">{{ $plato->cantidad }}</td>
+                        <td class="py-2 px-4 border-b">{{ $plato->cantidadDisponible }}</td>
 
                         <td class="py-2 px-4 border-b">
                             <a href="{{ route('editar-platos', $plato->id) }}"

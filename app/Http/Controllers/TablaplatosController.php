@@ -30,7 +30,7 @@ class TablaplatosController extends Controller
             'nombre_plato' => 'required|string|max:255',
             'descripcion' => 'required|string',
             'precio' => 'required|numeric|min:0',
-            'cantidad' => 'required|integer|min:1',
+            'cantidadDisponible' => 'required|integer|min:1',
             'imagen' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
         ]);
 
@@ -52,7 +52,7 @@ class TablaplatosController extends Controller
         $plato->nombre_plato = $request->nombre_plato;
         $plato->descripcion = $request->descripcion;
         $plato->precio = $request->precio;
-        $plato->cantidad = $request->cantidad;
+        $plato->cantidadDisponible = $request->cantidadDisponible;
 
         // Guardar los cambios en la base de datos
         $plato->save();
@@ -76,5 +76,5 @@ class TablaplatosController extends Controller
         return redirect()->back()->with('success', 'El plato ha sido eliminado con éxito');
     }
 
-    
+
 }

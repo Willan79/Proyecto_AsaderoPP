@@ -11,8 +11,8 @@
             background-image: url("{{ asset('img/fondo-2.jpg') }}");
         }
     </style>
+    <link rel="stylesheet" href="{{ asset('css/icon.css') }}">
     <script src="{{ asset('js/platos.js') }}"></script>
-    <link rel="stylesheet" href="{{ asset('css/estilos.css') }}">
     <script src="{{ asset('js/modales.js') }}"></script>
 </head>
 
@@ -31,23 +31,23 @@
                         <a>
                             <span class="text-sky-800"> Hola: {{ auth()->user()->name }}</span>
                         </a>
-                        <!-- Carrito de compras-->
-                        <!-- Sí existen elementos se muestra el carrito -->
-                        @if (Cart::content()->count())
-                            <a href="" class="text-black">
-                                <div class="cart-icon">
-                                    <svg class="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="none"
-                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
-                                        stroke-linejoin="round">
-                                        <circle cx="9" cy="21" r="1" />
-                                        <circle cx="20" cy="21" r="1" />
-                                        <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
-                                    </svg>
-                                    <!-- Sí existen elementos se muestra el numeo -->
-                                    <span class="badge">{{ Cart::content()->count() }}</span>
-                                </div>
-                            </a>
-                        @endif
+
+                        <!--  icono del carrito absolute top-0 right-0  rounded-full-->
+                        <a href="{{ route('carrito.index') }}" class="text-black">
+                            <div class="cart-icon relative">
+                                <svg class="h-8 w-8 text-red-500" viewBox="0 0 24 24" fill="none" stroke="currentColor"
+                                    stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                                    <circle cx="9" cy="21" r="1" />
+                                    <circle cx="20" cy="21" r="1" />
+                                    <path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6" />
+                                </svg>
+                                <span
+                                    class="badge  bg-red-500 text-white  text-xs px-2 py-1">
+                                    +
+                                </span>
+                            </div>
+                        </a>
+
                         @if (auth()->user()->role === 'admin')
                             <a href="{{ route('admin.index') }}">Admin</a>
                         @endif

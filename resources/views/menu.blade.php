@@ -5,6 +5,7 @@
 @endsection
 
 @section('contenido')
+    
     <p class="text-3xl font-bold text-amber-500 flex justify-center">Categorías</p>
     <div class="flex justify-center m-4">
         <div class="flex flex-col gap-2 md:flex-row justify-center w-auto pb-20 pt-4 md:w-10/12">

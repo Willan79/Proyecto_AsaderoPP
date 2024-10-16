@@ -8,63 +8,87 @@
     <div class="md:flex md:justify-center md:items-center">
 
         <div class="ms:w-8/12 md:w-6/12  lg:w-4/12 bg-gray-200 p-4 shadow-xl rounded-lg m-4">
-            <span class="text-2xl flex justify-center">Registro de usuario</span>
+            <span class="text-2xl flex justify-center mb-6">Registro de usuario</span>
 
             <form action="{{ route('register') }}" method="POST">
                 @csrf <!--Token de seguridad  -->
 
-                <div class="flex items-center mb-2 mt-4" id="nombre">
-                    <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Nombre</span>
-                    <input type="text"
+                <div class="flex flex-col items-center mb-2" id="name">
+                    <div class="flex w-full">
+                        <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Nombre</span>
+                        <input type="text"
                         class="p-2 rounded-md w-full border-2 border-gray-300 focus:border-blue-500 focus:outline-none"
                         id="name" name="name" placeholder="Nombre" value="{{ old('name') }}" />
-                    @error('name')
-                        <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm text-center">{{ $message }}</p>
-                    @enderror
+                    </div>
+                    <div>
+                        @error('name')
+                            <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
                 </div>
 
-                <div class="flex items-center mb-2" id="apellido">
-                    <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Apellido</span>
+                <div class="flex flex-col items-center mb-2" id="apellido">
+                    <div class="flex w-full">
+                        <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Apellido</span>
                     <input type="text"
                         class="p-2 rounded-md border-2 border-gray-300 focus:border-blue-500 focus:outline-none  w-full"
                         id="apellido" name="apellido" placeholder="apellido" value="{{ old('apellido') }}" />
-                    @error('apellido')
-                        <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
+
+                    </div>
+                    <div>
+                        @error('apellido')
+                            <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
                 </div>
 
-                <div class="flex items-center mb-2" id="telefono">
-                    <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Email</span>
+                <div class="flex flex-col items-center mb-2" id="email">
+                    <div class="flex w-full">
+                        <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Email</span>
                     <input type="email"
                         class="p-2 rounded-md border-2 border-gray-300 focus:border-blue-500 focus:outline-none w-full"
                         id="email" name="email" placeholder="Email" value="{{ old('email') }}" />
-                    @error('email')
-                        <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
+
+                    </div>
+                    <div>
+                        @error('email')
+                            <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
                 </div>
 
-                <div class="flex items-center mb-2" id="telefono">
-                    <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Dirección</span>
+                <div class="flex flex-col items-center mb-2" id="direción">
+                    <div class="flex w-full">
+                        <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Dirección</span>
                     <input type="text"
                         class="p-2 rounded-md border-2 border-gray-300 focus:border-blue-500 focus:outline-none w-full"
                         id="direccion" name="direccion" placeholder="Dirección" value="{{ old('direccion') }}" />
-                    @error('direccion')
-                        <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
+
+                    </div>
+                    <div>
+                        @error('direccion')
+                            <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
                 </div>
 
-                <div class="flex items-center mb-2" id="telefono">
-                    <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Teléfono</span>
-                    <input type="text"
-                        class="p-2 rounded-md border-2 border-gray-300 focus:border-blue-500 focus:outline-none w-full"
-                        id="telefono" name="telefono" placeholder="Teléfono" value="{{ old('telefono') }}" />
-                    @error('telefono')
-                        <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
-                    @enderror
+                <div class="flex flex-col items-center mb-2" id="telefono">
+                    <div class="flex w-full">
+                        <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Teléfono</span>
+                        <input type="text"
+                            class="p-2 rounded-md border-2 border-gray-300 focus:border-blue-500 focus:outline-none w-full"
+                            id="telefono" name="telefono" placeholder="Teléfono" value="{{ old('telefono') }}" />
+
+                    </div>
+                    <div>
+                        @error('telefono')
+                            <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
+                        @enderror
+                    </div>
                 </div>
 
                 <div class="flex flex-col items-center mb-2 " id="password">
-                    <div class="flex">
+                    <div class="flex w-full">
                         <span class=" p-2 bg-gray-200 rounded-l-md text-gray-700">Contraseña</span>
                         <input type="password"
                             class="p-2 rounded-md border-2 border-gray-300 focus:border-blue-500 focus:outline-none w-full"

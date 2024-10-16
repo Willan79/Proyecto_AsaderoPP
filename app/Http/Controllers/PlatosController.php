@@ -16,9 +16,6 @@ class PlatosController extends Controller
         return view('admin.nuevoplato');
     }
 
-
-
-
     public function store(Request $request)
     {
         // Validar los datos del formulario
@@ -28,7 +25,7 @@ class PlatosController extends Controller
             'descripcion' => 'required|string',
             'precio' => 'required',
             'imagen' => 'nullable|image|mimes:jpg,jpeg,png,gif|max:2048',
-            'cantidad' => 'required|integer|min:1',
+            'cantidadDisponible' => 'required|integer|min:1',
         ]);
 
         // Manejar la subida de la imagen
@@ -44,24 +41,13 @@ class PlatosController extends Controller
             'descripcion' => $request->descripcion,
             'precio' => $request->precio,
             'imagen' => $imagePath, // Guardar la ruta de la imagen
-            'cantidad' => $request->cantidad,
+            'cantidadDisponible' => $request->cantidadDisponible,
         ]);
 
         // Redirigir a una página o mostrar un mensaje de éxito
-        //return redirect()->route('menu');
-        //return redirect()->back()->with('success', 'El plato ha sido creado con éxito');
         return redirect()->route('tabla-platos')->with('success', 'El plato ha sido creado con éxito');
     }
-    /*
-    public function show($id)
-    {
-        // Encontrar el plato por ID
-        $plato = Plato::findOrFail($id);
-
-        // Retornar la vista de detalles con el plato
-        return view('detalles_plato', compact('plato'));
-    }
-    */
+    // Modal detalles del plato
     public function show($id)
     {
         $plato = Plato::findOrFail($id);

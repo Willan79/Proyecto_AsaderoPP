@@ -58,9 +58,9 @@
 
             <!-- Cantidad Disponible -->
             <div class="mb-4">
-                <label for="cantidad" class="block text-gray-700 font-semibold mb-2">Cantidad Disponible</label>
-                <input type="number" id="cantidad" name="cantidad" class="w-full p-2 border border-gray-300 rounded"
-                    value="{{ $plato->cantidad }}" min="1">
+                <label for="cantidadDisponible" class="block text-gray-700 font-semibold mb-2">Cantidad Disponible</label>
+                <input type="number" id="cantidadDisponible" name="cantidadDisponible" class="w-full p-2 border border-gray-300 rounded"
+                    value="{{ $plato->cantidadDisponible }}" min="1">
             </div>
 
             <!-- Botón de Enviar -->
