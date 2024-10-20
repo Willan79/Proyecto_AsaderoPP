@@ -36,6 +36,7 @@ class PedidoController extends Controller
         // Validar el método de pago
         $request->validate([
             'metodo_pago' => 'required|in:efectivo,nequi',
+            'direccion_envio' => 'required|string|max:255', // Validar la dirección de envío
         ]);
 
         // Usar una transacción para asegurar que todo el proceso sea atómico
@@ -53,16 +54,13 @@ class PedidoController extends Controller
                 return $item->cantidad * $item->precio;
             });
 
-            // Obtener la dirección del usuario autenticado
-            $direccionEnvio = auth()->user()->direccion;
-
             // Crear un nuevo pedido
             $pedido = Pedido::create([
                 'user_id' => auth()->user()->id,
                 'total' => $total,
                 'estado' => 'pendiente',
                 'metodo_pago' => $request->input('metodo_pago'),
-                'direccion_envio' => $direccionEnvio, // Usando la dirección del perfil del usuario
+                'direccion_envio' => $request->direccion_envio,
             ]);
 
             // Guardar los detalles del pedido
@@ -96,4 +94,13 @@ class PedidoController extends Controller
         return view('pedido-exitoso');
     }
 
+    public function verEstadoPedido()
+    {
+        // Obtener los pedidos del usuario actual cuyo estado sea diferente a 'finalizado'
+        $pedidos = Pedido::where('user_id', Auth::id())
+            ->where('estado', '!=', 'finalizado')
+            ->get();
+
+        return view('ver-pedido', compact('pedidos'));
+    }
 }

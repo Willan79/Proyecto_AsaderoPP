@@ -28,7 +28,7 @@ use App\Http\Controllers\MenuejecutivoController;
 */
 
 Route::get('/', function () {
-    return view('principal');
+    return view('index');
 });
 
 // Mostrar el formulario de registro y enviar los datos a la (BD)
@@ -66,9 +66,12 @@ Route::middleware(['auth', 'admin'])->group(function () {
     // Tabla usuarios
     Route::get('/tabla-user', [TablauserController::class, 'index'])->name('tabla-user');
     Route::delete('/admin/usuarios/{id}', [TablauserController::class, 'destroy'])->name('usuarios.destroy');
-
     // Mostrar tabla de pedidos
     Route::get('/tabla-pedidos', [TablapedidosController::class, 'index'])->name('tabla-pedidos');
+
+    Route::get('/tabla-pedidos/{id}/detalles', [TablaPedidosController::class, 'show'])->name('detalles-pedidos');
+    Route::get('/tabla-pedidos/{id}/editar', [TablaPedidosController::class, 'edit'])->name('editar-estado');
+    Route::put('/tabla-pedidos/{id}', [TablaPedidosController::class, 'update'])->name('update-estado');
 });
 
 //! detalles o Modal
@@ -88,6 +91,7 @@ Route::middleware(['auth'])->group(function () {
 Route::get('/pedido/confirmar', [PedidoController::class, 'confirmarPago'])->name('confirmar-pago');
 Route::post('/pedido/procesar', [PedidoController::class, 'procesarPago'])->name('procesar.pedido');
 Route::get('/pedido/exito', [PedidoController::class, 'exito'])->name('pedido-exitoso');
+Route::get('/pedido/estado', [PedidoController::class, 'verEstadoPedido'])->name('ver-pedido');
 
 /* ruta para vista de pedido exitoso
 Route::get('/pedido/exito', [PedidoController::class, 'exito'])->name('pedido.exito');

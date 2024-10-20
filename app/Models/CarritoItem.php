@@ -16,6 +16,12 @@ class CarritoItem extends Model
         'precio',
     ];
 
+    // Relación con el carrito (un item pertenece a un carrito)
+    public function carrito()
+    {
+        return $this->belongsTo(Carrito::class);
+    }
+
     public function plato()
     {
         return $this->belongsTo(Plato::class);

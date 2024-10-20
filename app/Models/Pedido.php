@@ -16,4 +16,17 @@ class Pedido extends Model
         'direccion_envio',
     ];
 
+    public function user()
+    {
+        //belongsTo (Relación inversa de "uno a muchos")
+        return $this->belongsTo(User::class);
+    }
+
+    // Relación con los detalles del pedido
+    public function detalles()
+    {
+        // hasMany (Relación "uno a muchos")
+        return $this->hasMany(DetallePedido::class);
+    }
+
 }

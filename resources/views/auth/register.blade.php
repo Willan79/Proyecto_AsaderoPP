@@ -5,7 +5,7 @@
 @endsection
 
 @section('contenido')
-    <div class="md:flex md:justify-center md:items-center">
+    <div class="md:flex md:justify-center md:items-center mt-10">
 
         <div class="ms:w-8/12 md:w-6/12  lg:w-4/12 bg-gray-200 p-4 shadow-xl rounded-lg m-4">
             <span class="text-2xl flex justify-center mb-6">Registro de usuario</span>
@@ -62,7 +62,7 @@
                         <span class=" p-2 bg-gray-200 rounded-md text-gray-700">Dirección</span>
                     <input type="text"
                         class="p-2 rounded-md border-2 border-gray-300 focus:border-blue-500 focus:outline-none w-full"
-                        id="direccion" name="direccion" placeholder="Dirección" value="{{ old('direccion') }}" />
+                        id="direccion" name="direccion" placeholder="Dirección Completa" value="{{ old('direccion') }}" />
 
                     </div>
                     <div>
@@ -105,7 +105,7 @@
                 </div>
 
                 <input type="submit" value="Crear Cuenta"
-                    class="bg-blue-500 hover:bg-blue-700 transition-colors cursor-pointer font-bold w-4/12 p-2 rounded-lg"></input>
+                    class="text-white bg-blue-500 hover:bg-blue-700 transition-colors cursor-pointer font-bold w-4/12 p-2 rounded-lg"></input>
             </form>
         </div>
     </div>

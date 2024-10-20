@@ -6,7 +6,7 @@
 
 @section('contenido')
 
-    <div class="flex flex-col md:flex-row justify-center">
+    <div class="flex flex-col md:flex-row justify-center mt-10">
 
         <div class="bg-white md:w-6/12 p-4 rounded-lg md:flex flex-col  m-2">
 

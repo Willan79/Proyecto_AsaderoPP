@@ -11,7 +11,7 @@ use Illuminate\Support\Facades\Auth;
 class CarritoController extends Controller
 {
     // Mostrar el carrito del usuario actual
-    
+
     public function index()
     {
         $carrito = Carrito::where('user_id', Auth::id())->with('items.plato')->first();
@@ -35,7 +35,6 @@ class CarritoController extends Controller
             ['cantidad' => $request->cantidad, 'precio' => $plato->precio]
         );
         return redirect()->back()->with('success', 'Plato agregado al carrito, visita tu carrito');
-
     }
 
     public function removeFromCarrito($itemId)
@@ -52,7 +51,6 @@ class CarritoController extends Controller
         $carritoItem->cantidad = $request->cantidad;
         $carritoItem->save();
         return redirect()->back()->with('success', 'Cantidad actualizada');
-
     }
 
     public function closeCarrito()
@@ -65,5 +63,20 @@ class CarritoController extends Controller
         }
         return redirect()->back()->with('success', 'Carrito cerrado');
         //return back()->with('success', 'Carrito cerrado');
+    }
+
+    //En el archivo AppServiceProvider.php,agregamos código dentro del método boot()
+    //Para asegurarte de que el número total de platos esté disponible en todas las vistas
+    //donde el usuario vea el icono del carrito
+    public function contarPlatos()
+    {
+        // Obtener el carrito del usuario actual
+        $carrito = Carrito::where('user_id', Auth::id())->first();
+
+        // Si existe un carrito, sumamos las cantidades de los items
+        $totalPlatos = $carrito ? $carrito->items->sum('cantidad') : 0;
+
+        // Retornamos el total
+        return $totalPlatos;
     }
 }

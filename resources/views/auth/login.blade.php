@@ -1,14 +1,12 @@
 @extends('layouts.app')
 
-@section('titulo')
-Inicia sesión
-@endsection
 
 @section('contenido')
-<div class="md:flex md:justify-center md:gap-6 md:items-center min-h-screen">
+<div class="md:flex md:justify-center md:gap-6 md:items-center m-4">
 
-    <div class="md:w-4/12 bg-white p-4 shadow-xl rounded-lg m-4">
+    <div class="md:w-4/12 bg-white p-4 shadow-xl rounded-lg mt-28 ">
         <form method="POST" action="{{ route('login') }}">
+            <p class="font-bold">Inicio de sesión</p>
             @csrf <!--Token de seguridad-->
 
             <!-- if con mensaje desde LoginController -->
@@ -51,7 +49,7 @@ Inicia sesión
             <input
             type="submit"
             value="Iniciar sesión"
-            class="w-4/12 bg-sky-600 hover:bg-sky-700 transition-colors cursor-pointer font-bold p-2 rounded-lg"
+            class="text-white w-4/12 bg-blue-700 hover:bg-blue-500 transition-colors cursor-pointer font-bold py-2 rounded-lg"
             ></input>
         </form>
     </div>

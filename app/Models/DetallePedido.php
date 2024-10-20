@@ -16,4 +16,15 @@ class DetallePedido extends Model
         'cantidad',
         'precio',
     ];
+
+    public function pedido()
+    {
+        return $this->belongsTo(Pedido::class);
+    }
+
+    // Relación con el plato
+    public function plato()
+    {
+        return $this->belongsTo(Plato::class);
+    }
 }

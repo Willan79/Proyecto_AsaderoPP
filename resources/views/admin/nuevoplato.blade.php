@@ -1,11 +1,11 @@
-@extends('layouts.app')
+@extends('layouts.app-admin')
 
 @section('titulo')
     Nuevo plato
 @endsection
 
 @section('contenido')
-    <div class="container mx-auto p-4 w-5/12">
+    <div class="container mx-auto p-4 w-5/12 pt-20">
         @if (session('success'))
             <div class="bg-green-500 text-white p-2 rounded mb-4 text-center">
                 {{ session('success') }}

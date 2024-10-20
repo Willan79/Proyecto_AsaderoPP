@@ -5,7 +5,7 @@
 @endsection
 
 @section('contenido')
-    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto flex flex-col justify-center gap-6">
+    <div class="bg-white p-8 rounded-lg shadow-lg max-w-lg mx-auto flex flex-col justify-center gap-6 mt-10">
         <h2 class="text-2xl font-bold text-green-600 text-center">Confirmar Pago</h2>
 
         <div class="bg-blue-100 border border-blue-400 text-blue-700 p-4 rounded">
@@ -22,6 +22,18 @@
                     <option value="efectivo">Efectivo (contra entrega)</option>
                     <option value="nequi">Nequi</option>
                 </select>
+            </div>
+
+            <div class="mb-4">
+                <label for="direccion_envio" class="block text-sm font-medium text-gray-700">Dirección de Envío:</label>
+                <input type="text" name="direccion_envio" id="direccion_envio" placeholder="Tu dirección completa y barrio"
+                    class="w-full mt-1 block bg-gray-50 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-indigo-500 focus:border-indigo-500 sm:text-sm"
+                    required>
+                <div>
+                    @error('direccion_envio')
+                        <p class="bg-red-500 text-white my-2 rounded-lg tesxt-sm p-2 text-center">{{ $message }}</p>
+                    @enderror
+                </div>
             </div>
 
             <button type="submit"

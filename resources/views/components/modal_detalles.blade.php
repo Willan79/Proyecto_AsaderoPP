@@ -12,14 +12,17 @@
             <!-- Imagen del plato -->
             <img id="modal-imagen" src="" alt="Imagen del plato" class="w-48 h-auto mb-4 md:mb-0 md:mr-6">
 
-            <!-- Detalles del plato -->
+            <!-- Detalles del plato-->
             <div class="text-center md:text-left">
                 <h2 id="modal-nombre_plato" class="text-2xl font-bold mb-2">Nombre del Plato</h2>
                 <p id="modal-descripcion" class="text-gray-700 mb-2">Descripción del plato</p>
                 <p id="modal-precio" class="text-gray-800 font-bold mb-4">Precio:
                     ${{ number_format($plato->precio, 2, ',', '.') }}
                 </p>
+                <p id="modal-antidadDisponible" class="text-gray-800 font-bold mb-4"><span
+                    id="modal-cantidadDisponible"></span></p>
             </div>
+
         </div>
     </div>
 </div>

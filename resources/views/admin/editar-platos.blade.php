@@ -1,17 +1,17 @@
-@extends('layouts.app')
+@extends('layouts.app-admin')
 
 @section('titulo')
-    Editar el plato
+    - Editar el plato
 @endsection
 
 @section('contenido')
-    <div class="container mx-auto p-4 w-5/12">
+    <div class="container mx-auto p-4 w-5/12 pt-20">
         @if (session('success'))
             <div class="bg-green-500 text-white p-2 rounded mb-4 text-center">
                 {{ session('success') }}
             </div>
         @endif
-        <p class="font-bold text-2xl text-amber-400">Editar Plato</p>
+
         <form action="{{ route('platos.update', $plato->id) }}" method="POST" enctype="multipart/form-data"
             class="bg-white p-6 rounded-lg shadow-md">
             @csrf
@@ -37,7 +37,7 @@
             <!-- Descripción -->
             <div class="mb-4">
                 <label for="descripcion" class="block text-gray-700 font-semibold mb-2">Descripción</label>
-                <textarea id="descripcion" name="descripcion" class="w-full p-2 border border-gray-300 rounded" rows="4">{{ $plato->descripcion }}</textarea>
+                <textarea id="descripcion" name="descripcion" class="w-full p-2 border border-gray-300 rounded" rows="2">{{ $plato->descripcion }}</textarea>
             </div>
 
             <!-- Precio -->
