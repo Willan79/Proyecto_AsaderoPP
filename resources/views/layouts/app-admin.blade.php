@@ -44,6 +44,12 @@
                              <path d="M9 17v1a3 3 0 0 0 6 0v-1" /></svg>
                         Pedidos
                     </a></li>
+                    <li class="mb-4 bg-gray-700 hover:bg-gray-600 p-2 rounded"><a href="{{ route('tabla-servicio') }}" class=" flex gap-2">
+                    <svg class="h-6 w-6 text-red-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9.75 3a.75.75 0 010 1.5H8.403a1.25 1.25 0 00-1.181.826l-.537 1.435a.75.75 0 01-.948.45l-1.286-.428a.75.75 0 00-.923.435l-.669 1.59a.75.75 0 00.221.846l1.073.877a.75.75 0 010 1.152l-1.073.877a.75.75 0 00-.221.846l.67 1.59a.75.75 0 00.922.435l1.286-.428a.75.75 0 01.948.45l.537 1.435a1.25 1.25 0 001.18.826H9.75a.75.75 0 010 1.5h4.5a.75.75 0 010-1.5h1.347a1.25 1.25 0 001.18-.826l.537-1.435a.75.75 0 01.948-.45l1.286.428a.75.75 0 00.922-.435l.67-1.59a.75.75 0 00-.222-.846l-1.073-.877a.75.75 0 010-1.152l1.073-.877a.75.75 0 00.222-.846l-.67-1.59a.75.75 0 00-.922-.435l-1.286.428a.75.75 0 01-.948-.45l-.537-1.435a1.25 1.25 0 00-1.18-.826H14.25a.75.75 0 010-1.5h-4.5zM12 15a3 3 0 100-6 3 3 0 000 6z" />
+                        </svg>
+                        Servicios
+                    </a></li>
                     <li class="mb-4 bg-gray-700 hover:bg-gray-600 p-2 rounded"><a href="{{ route('tabla-user') }}" class=" flex gap-2">
                         <svg class="h-6 w-6 text-red-500"  fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 4.354a4 4 0 110 5.292M15 21H3v-1a6 6 0 0112 0v1zm0 0h6v-1a6 6 0 00-9-5.197M13 7a4 4 0 11-8 0 4 4 0 018 0z"/>

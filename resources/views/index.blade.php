@@ -58,11 +58,11 @@
                 Ir al MENÚ
             </button>
         </a>
-        <a href="{-{ route('servicios') }}">
-            <button class="bg-amber-500 hover:bg-amber-400 transition-colors cursor-pointer font-bold p-3 rounded-lg text-white w-48">
-                Ir a SERVICIOS
-            </button>
-        </a>
+        <a href="{{ route('servicios') }}">
+                <input type="submit" value="Ir a SERVICIOS"
+                    class="bg-amber-500 hover:bg-amber-400 transition-colors cursor-pointer font-bold p-2 rounded-lg">
+                </input>
+            </a>
     </div>
 
     <!-- Sección de contacto -->

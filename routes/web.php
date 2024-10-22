@@ -15,6 +15,8 @@ use App\Http\Controllers\MenuespecialController;
 use App\Http\Controllers\TablapedidosController;
 use App\Http\Controllers\MenucorrienteController;
 use App\Http\Controllers\MenuejecutivoController;
+use App\Http\Controllers\TablaservicioController;
+use App\Http\Controllers\ServicioController;
 
 /*
 |--------------------------------------------------------------------------
@@ -92,6 +94,26 @@ Route::get('/pedido/confirmar', [PedidoController::class, 'confirmarPago'])->nam
 Route::post('/pedido/procesar', [PedidoController::class, 'procesarPago'])->name('procesar.pedido');
 Route::get('/pedido/exito', [PedidoController::class, 'exito'])->name('pedido-exitoso');
 Route::get('/pedido/estado', [PedidoController::class, 'verEstadoPedido'])->name('ver-pedido');
+
+#esta ruta es para mostrar al admin la vista de servicios
+Route::get('/tabla-servicio', [TablaservicioController::class, 'index'])->name('tabla-servicio');
+#muestra el formulario para agregar un nuevo servicio.
+Route::get('/nuevo-servicio',[TablaservicioController::class, 'newService'])->name('nuevo-servicio');
+#procesa la solicitud POST para guardar un nuevo servicio.
+Route::post('/nuevo-servicio',[TablaservicioController::class, 'store']);
+#muestra el formulario para editar un servicio específico.
+Route::get('editar-servicio/{id}/edit', [TablaservicioController::class, 'edit'])->name('editar-servicio');
+#procesa la solicitud PUT para actualizar los datos de un servicio específico.
+Route::put('editar-servicio/{id}', [TablaservicioController::class, 'update'])->name('servicio.update');
+#elimina un servicio específico de la base de datos.
+Route::delete('editar-servicio/{id}', [TablaservicioController::class, 'destroy'])->name('servicio.destroy');
+#muestra la vista de servicios para los clientes.
+Route::get('/servicios', [ServicioController::class, 'index'])->name('servicios');
+#muestra los datos relacionados con los servicios para los clientes.
+Route::get('/datos', [ServicioController::class, 'datos'])->name('datos');
+#procesa el formulario para que los clientes dejen sus datos y envía un mensaje.
+Route::post('/dejar-datos', [ServicioController::class, 'enviarMensaje'])->name('dejar-datos');
+
 
 /* ruta para vista de pedido exitoso
 Route::get('/pedido/exito', [PedidoController::class, 'exito'])->name('pedido.exito');
