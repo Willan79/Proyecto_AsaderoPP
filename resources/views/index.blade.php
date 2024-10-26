@@ -5,8 +5,8 @@
 @endsection
 
 @section('contenido')
-    
-<div class="container mx-auto py-10" style="min-height: calc(90vh - 64px);">
+
+<div class="container py-10" style="min-height: calc(90vh - 64px);">
     <!-- Encabezado con imagen de fondo -->
     <div class="relative bg-cover bg-center h-96 rounded-lg shadow-lg m-2" style="background-image: url('{{ asset('img/fondo-2.jpg') }}');">
         <div class="absolute inset-0 bg-black bg-opacity-50 flex flex-col justify-center items-center">
@@ -60,7 +60,7 @@
         </a>
         <a href="{{ route('servicios') }}">
                 <input type="submit" value="Ir a SERVICIOS"
-                    class="bg-amber-500 hover:bg-amber-400 transition-colors cursor-pointer font-bold p-2 rounded-lg">
+                    class="bg-amber-500 hover:bg-amber-400 transition-colors cursor-pointer font-bold p-2 rounded-lg text-white px-6">
                 </input>
             </a>
     </div>

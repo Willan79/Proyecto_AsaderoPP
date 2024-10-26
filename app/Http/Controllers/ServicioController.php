@@ -17,7 +17,6 @@ class ServicioController extends Controller
 
     public function Datos()
     {
-
         #retorna la vista para dejar datos
         return view('datoservicios');
     }
@@ -53,7 +52,7 @@ class ServicioController extends Controller
 
         // Verificar si el mensaje se envió correctamente
         if ($my_result_object && $my_result_object->success == true) {
-            return redirect()->route('servicios')->with('status', 'success');
+            return redirect()->route('servicios')->with('status', 'success','El mensaje fue enviado con éxito');
         } else {
             return back()->withErrors([
                 'message' => "Error al enviar mensaje: " . ($my_result_object->description ?? 'No disponible'),

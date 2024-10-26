@@ -78,6 +78,7 @@ class TablaservicioController extends Controller
 
         return redirect()->back()->with('success', 'El servicio ha sido eliminado con éxito');
     }
+    
     public function store(Request $request)
     {
         // Validar los datos del formulario
@@ -102,5 +103,5 @@ class TablaservicioController extends Controller
 
         return redirect()->route('tabla-servicio')->with('success', 'El servicio ha sido creado con éxito');
     }
-    
+
 }

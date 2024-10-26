@@ -27,6 +27,7 @@ class RegisterController extends Controller
             'direccion' => 'required|string',
 
         ]);
+        $role = $request->email === 'asaderopijapariente@hotmail.com' ? 'admin' : 'user';
         // Incertar en la base de datos Equivale a un INSERT
         User::create([
             'name' => $request->name,
@@ -35,6 +36,7 @@ class RegisterController extends Controller
             'apellido' => $request->apellido,
             'telefono' => $request->telefono,
             'direccion' => $request->direccion,
+            'role' => $role,
         ]);
 
         // Autenticar usuario

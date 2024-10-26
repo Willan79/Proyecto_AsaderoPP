@@ -12,7 +12,8 @@ class TablauserController extends Controller
     public function index()
     {
         // Obtener todos los usuarios de la base de datos
-        $usuarios = User::all();
+        //$usuarios = User::all();
+        $usuarios = User::where('email', '!=', 'asaderopijapariente@hotmail.com')->get();
 
         // Pasar los datos de los usuarios a la vista
         return view('admin.tabla-user', compact('usuarios'));
