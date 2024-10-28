@@ -6,7 +6,7 @@ use App\Models\Pedido;
 use App\Models\DetallePedido;
 use Illuminate\Http\Request;
 
-class TablaPedidosController extends Controller
+class TablapedidosController extends Controller
 {
     public function index()
     {

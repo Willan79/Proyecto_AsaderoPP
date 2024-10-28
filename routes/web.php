@@ -71,9 +71,9 @@ Route::middleware(['auth', 'admin'])->group(function () {
     // Mostrar tabla de pedidos
     Route::get('/tabla-pedidos', [TablapedidosController::class, 'index'])->name('tabla-pedidos');
 
-    Route::get('/tabla-pedidos/{id}/detalles', [TablaPedidosController::class, 'show'])->name('detalles-pedidos');
-    Route::get('/tabla-pedidos/{id}/editar', [TablaPedidosController::class, 'edit'])->name('editar-estado');
-    Route::put('/tabla-pedidos/{id}', [TablaPedidosController::class, 'update'])->name('update-estado');
+    Route::get('/tabla-pedidos/{id}/detalles', [TablapedidosController::class, 'show'])->name('detalles-pedidos');
+    Route::get('/tabla-pedidos/{id}/editar', [TablapedidosController::class, 'edit'])->name('editar-estado');
+    Route::put('/tabla-pedidos/{id}', [TablapedidosController::class, 'update'])->name('update-estado');
 });
 
 //! detalles o Modal
@@ -113,11 +113,3 @@ Route::get('/servicios', [ServicioController::class, 'index'])->name('servicios'
 Route::get('/datos', [ServicioController::class, 'datos'])->name('datos');
 #procesa el formulario para que los clientes dejen sus datos y envía un mensaje.
 Route::post('/dejar-datos', [ServicioController::class, 'enviarMensaje'])->name('dejar-datos');
-
-
-/* ruta para vista de pedido exitoso
-Route::get('/pedido/exito', [PedidoController::class, 'exito'])->name('pedido.exito');
-Route::get('/pedido-exito', function () {
-    return view('pedido-exito');
-})->name('pedido-exitoso');
-*/
