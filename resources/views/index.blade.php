@@ -1,7 +1,7 @@
 @extends('layouts.app')
 
 @section('titulo')
-    - Inicio
+    - Inicio Asaderopp
 @endsection
 
 @section('contenido')
@@ -59,10 +59,10 @@
             </button>
         </a>
         <a href="{{ route('servicios') }}">
-                <input type="submit" value="Ir a SERVICIOS"
-                    class="bg-amber-500 hover:bg-amber-400 transition-colors cursor-pointer font-bold p-2 rounded-lg text-white px-6">
-                </input>
-            </a>
+            <input type="submit" value="Ir a SERVICIOS"
+                class="bg-amber-500 hover:bg-amber-400 transition-colors cursor-pointer font-bold p-2 rounded-lg text-white px-6">
+            </input>
+        </a>
     </div>
 
     <!-- Sección de contacto -->
